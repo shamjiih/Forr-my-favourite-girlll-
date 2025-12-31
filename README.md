@@ -2,35 +2,57 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>For You</title>
+<title>Happy New Year 🤍</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
 body{
   margin:0;
-  background:#f6f4f1;
-  font-family: Georgia, serif;
+  height:100vh;
   display:flex;
   justify-content:center;
   align-items:center;
-  height:100vh;
+  background: linear-gradient(135deg, #fdfbfb, #ebedee);
+  font-family: 'Segoe UI', sans-serif;
   color:#444;
 }
+
 .card{
-  max-width:600px;
-  padding:40px 25px;
+  background: rgba(255,255,255,0.95);
+  padding:45px 35px;
+  border-radius:22px;
+  max-width:440px;
   text-align:center;
-  animation:fade 1.5s ease;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+  animation: fadeIn 2s ease;
 }
-button{
-  margin-top:30px;
-  padding:10px 28px;
-  border:none;
-  background:#d8b4a0;
-  color:#fff;
+
+h1{
+  font-weight:500;
+  margin-top:0;
+}
+
+p{
   font-size:16px;
-  border-radius:25px;
+  line-height:1.9;
+  margin-bottom:18px;
 }
-@keyframes fade{
+
+button{
+  margin-top:25px;
+  padding:12px 34px;
+  border:none;
+  border-radius:30px;
+  background:#c8b6a6;
+  color:#fff;
+  font-size:15px;
+  cursor:pointer;
+}
+
+button:hover{
+  background:#b7a795;
+}
+
+@keyframes fadeIn{
   from{opacity:0;}
   to{opacity:1;}
 }
@@ -38,33 +60,39 @@ button{
 </head>
 
 <body>
+
 <div class="card" id="card">
-  <p>Hey…</p>
-  <p>You don’t have to smile.</p>
-  <p>I just wanted you to know I’m here.</p>
+  <h1>Happy New Year 🎉</h1>
+  <p>
+    A brand new year is here,<br>
+    and with it, fresh moments, soft mornings,<br>
+    and new reasons to smile.
+  </p>
   <button onclick="next()">Continue</button>
 </div>
 
 <script>
-const text=[
- "I don’t know what you’re feeling right now.",
- "You don’t have to explain anything.",
- "Take your time.",
- "Bad days don’t change how special you are.",
- "I’m not here to fix things.",
- "Just to stay.",
- "Whenever you feel ready…",
- "I’m just one message away 🤍"
+const messages = [
+  "I hope this year brings you calm days and light hearts.",
+  "More laughter, more peace, and moments that feel right.",
+  "May you find happiness in small things and comfort in big dreams.",
+  "Leave behind what was heavy, and carry forward what matters.",
+  "This year, choose yourself a little more.",
+  "And remember — you deserve good things.",
+  "Wishing you a beautiful, gentle year ahead 🤍"
 ];
-let i=0;
+
+let i = 0;
+
 function next(){
- const c=document.getElementById("card");
- c.innerHTML="<p>"+text[i]+"</p>";
- if(i<text.length-1){
-  c.innerHTML+="<button onclick='next()'>Continue</button>";
- }
- i++;
+  const card = document.getElementById("card");
+  card.innerHTML = "<p>"+messages[i]+"</p>";
+  if(i < messages.length - 1){
+    card.innerHTML += "<button onclick='next()'>Continue</button>";
+  }
+  i++;
 }
 </script>
+
 </body>
 </html>
